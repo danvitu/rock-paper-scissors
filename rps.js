@@ -17,9 +17,13 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-  const playerSelection = prompt("Your choise: ").toLowerCase();
+  const playerSelection = prompt('Rock, Paper or Scissors: ').toLowerCase();
+  if (playerSelection === 'rock' || playerSelection === 'paper' || playerSelection === 'scissors') {
   const computerSelection = getComputerChoice();
   return playRound(playerSelection, computerSelection);
+  } else {
+  console.log('Incorrect value!');
+  }
 }
 
 for (let i = 0; i < 5; i++) {
