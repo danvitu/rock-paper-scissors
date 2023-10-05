@@ -1,5 +1,27 @@
 function getComputerChoice() {
-  const choice = ['Rock', 'Paper', 'Scissors'];
+  const choice = ['rock', 'paper', 'scissors'];
   const computerChoice = Math.floor(Math.random() * choice.length);
-  return choise[computerChoice];
+  return choice[computerChoice];
+}
+
+function playRound(playerSelection, computerSelection) {
+  if (playerSelection === computerSelection) {
+    return 'Player choose: ' + playerSelection + '. Computer choose: ' + computerSelection + '. Result is: ' + 'Draw';
+  }
+  else if ((playerSelection === 'rock' && computerSelection === 'scissors') || (playerSelection === 'scissors' && computerSelection === 'paper') || (playerSelection === 'paper' && computerSelection === 'rock')) {
+    return 'Player choose: ' + playerSelection + '. Computer choose: ' + computerSelection + '. Result is: ' + 'Win';
+  }
+  else {
+    return 'Player choose: ' + playerSelection + '. Computer choose: ' + computerSelection + '. Result is: ' + 'Lose';
+  }
+}
+
+function game() {
+  const playerSelection = prompt("Your choise: ").toLowerCase();
+  const computerSelection = getComputerChoice();
+  return playRound(playerSelection, computerSelection);
+}
+
+for (let i = 0; i < 5; i++) {
+  console.log(game());
 }
