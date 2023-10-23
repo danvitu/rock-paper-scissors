@@ -6,19 +6,26 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
-    return 'Player choose: ' + playerSelection + '. Computer choose: ' + computerSelection + '. Result is: ' + 'Draw';
+    return 'Player choose: ' + playerSelection + '. Computer choose: '
+     + computerSelection + '. Result is: ' + 'Draw';
   }
-  else if ((playerSelection === 'rock' && computerSelection === 'scissors') || (playerSelection === 'scissors' && computerSelection === 'paper') || (playerSelection === 'paper' && computerSelection === 'rock')) {
-    return 'Player choose: ' + playerSelection + '. Computer choose: ' + computerSelection + '. Result is: ' + 'Win';
+  else if ((playerSelection === 'rock' && computerSelection === 'scissors')
+   || (playerSelection === 'scissors' && computerSelection === 'paper')
+   || (playerSelection === 'paper' && computerSelection === 'rock')) {
+    return 'Player choose: ' + playerSelection + '. Computer choose: '
+     + computerSelection + '. Result is: ' + 'Win';
   }
   else {
-    return 'Player choose: ' + playerSelection + '. Computer choose: ' + computerSelection + '. Result is: ' + 'Lose';
+    return 'Player choose: ' + playerSelection + '. Computer choose: '
+     + computerSelection + '. Result is: ' + 'Lose';
   }
 }
 
 function game() {
   const playerSelection = prompt('Rock, Paper or Scissors: ').toLowerCase();
-  if (playerSelection === 'rock' || playerSelection === 'paper' || playerSelection === 'scissors') {
+  if (playerSelection === 'rock'
+   || playerSelection === 'paper'
+   || playerSelection === 'scissors') {
   const computerSelection = getComputerChoice();
   return playRound(playerSelection, computerSelection);
   } else {
@@ -28,4 +35,3 @@ function game() {
 
 for (let i = 0; i < 5; i++) {
   console.log(game());
-}
